@@ -1,0 +1,6 @@
+Jan 16 10:22:11 kali sshd[1234]: Accepted password for root from 192.168.1.20 port 54321 ssh2
+Jan 16 10:23:01 kali sshd[1235]: Failed password for root from 192.168.1.10 port 54322 ssh2
+Jan 16 10:23:05 kali sshd[1236]: Failed password for root from 192.168.1.10 port 54323 ssh2
+Jan 16 10:23:10 kali sshd[1237]: Failed password for root from 192.168.1.10 port 54324 ssh2
+Jan 16 10:23:15 kali sshd[1238]: Failed password for root from 192.168.1.10 port 54325 ssh2
+Jan 16 10:23:20 kali sshd[1239]: Failed password for root from 192.168.1.10 port 54326 ssh2
