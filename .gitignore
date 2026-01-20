@@ -1,0 +1,4 @@
+# Ignore real system auth logs
+log-analysis/auth.log
+
+
