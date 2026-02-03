@@ -42,6 +42,22 @@ This repository contains simple but practical Bash scripts used in a Security Op
 
 ---
 
+## 📂 Sample Log Included for Testing
+
+This repository includes a sample authentication log file:
+`log-analysis/sample_auth.log`
+
+The file contains sanitized test data that allows users to run the scripts immediately after cloning the repository.
+
+This avoids requiring access to real system logs such as:
+`/var/log/auth.log`
+
+and ensures safe testing without exposing sensitive system data.
+
+Users can replace the sample log with their own authentication logs for real-world analysis.
+
+---
+
 ## ▶️ How to Run the Scripts
 
 These scripts are designed to run on **Linux systems** such as:
@@ -58,4 +74,9 @@ chmod +x *.sh
 ./failed_login_detector.sh
 ./successful_login_detector.sh
 ./ssh_login_monitor.sh
+```
+
+> **Note:** Some scripts may require root privileges to read `/var/log/auth.log`.
+
+
 
