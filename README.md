@@ -7,7 +7,9 @@ This repository contains simple but practical Bash scripts used in a Security Op
 
 ## 🔍 Scripts Overview
 
-### 1️⃣ Failed SSH Login Detector
+### Log Analysis Scripts
+#### Failed SSH Login Detector
+
 **File:** `failed_login_detector.sh`
 
 - Scans authentication logs for **failed SSH login attempts**
@@ -17,7 +19,8 @@ This repository contains simple but practical Bash scripts used in a Security Op
 
 ---
 
-### 2️⃣ Successful SSH Login Detector
+#### Successful SSH Login Detector
+
 **File:** `successful_login_detector.sh`
 
 - Detects **successful SSH logins**
@@ -30,7 +33,8 @@ This repository contains simple but practical Bash scripts used in a Security Op
 
 ---
 
-### 3️⃣ SSH Login Monitor (SOC Analysis Script)
+#### SSH Login Monitor (SOC Analysis Script)
+
 **File:** `ssh_login_monitor.sh`
 
 - Performs **combined SSH log analysis**
@@ -39,6 +43,48 @@ This repository contains simple but practical Bash scripts used in a Security Op
   - 🟢 Successful SSH logins (user and source IP)
 - Automatically uses a **sample authentication log** for safe testing
 - Designed for **SOC analysts and blue-team investigations**
+
+---
+
+### File Integrity Monitoring Script
+
+**File:** `fim-monitor.sh`
+
+This script monitors a directory for unauthorized file changes.
+
+Features:
+
+- Creates a baseline of file hashes
+
+- Detects:
+
+  - Modified files
+
+  - Deleted files
+
+  - Newly created files
+
+- Useful for detecting **unauthorized system changes or malware activity**
+
+#### Create a baseline
+
+```bash
+./fim-monitor.sh baseline /path/to/folder
+```
+
+#### Check file integrity
+
+```bash
+./fim-monitor.sh check /path/to/folder
+```
+
+#### Example Output:
+
+```bash
+[ALERT] FILE MODIFIED: /etc/passwd
+[ALERT] FILE DELETED: /etc/cron.d/backup-job
+[ALERT] NEW FILE DETECTED: /tmp/malware.sh
+```
 
 ---
 
@@ -66,16 +112,24 @@ These scripts are designed to run on **Linux systems** such as:
 - Debian
 - WSL (Windows Subsystem for Linux)
 
-### Step-by-step
+### Run the log analysis scripts
 
 ```bash
-cd soc-bash-labs/log-analysis
+cd sripts/log-analysis
 chmod +x *.sh
 ./failed_login_detector.sh
 ./successful_login_detector.sh
 ./ssh_login_monitor.sh
 ```
 
+### Run the File Integrity Monitor
+
+```bash
+cd scripts/file-monitoring
+chmod +x fim-monitor.sh
+./fim-monitor.sh baseline /path/to/folder
+./fim-monitor.sh check /path/to/folder
+```
 > **Note:** Some scripts may require root privileges to read `/var/log/auth.log`.
 
 
